@@ -6,7 +6,7 @@
 #include <stdlib.h>
 class Texture {
 public:
-    Texture() {}
+    Texture();
     friend GLuint LoadTextureFromBMP( const char * filename, int width, int height );
 };
 

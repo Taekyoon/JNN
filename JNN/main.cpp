@@ -23,8 +23,12 @@ void CStart() {
 void CRender() {
     glClear (GL_COLOR_BUFFER_BIT);
     /* render */
+    jnn->update();
     jnn->render();
     glFlush();
+}
+void CKeyboard(unsigned char key, int x, int y) {
+    jnn->keyEvent(key);
 }
 void CInit(int argc, char** argv) {
     srand( time(NULL) );
@@ -37,11 +41,13 @@ void CGLInit(int argc, char ** argv) {
     glutInitWindowSize (WINDOW_WIDTH,WINDOW_HEIGHT);
     glutInitWindowPosition (100, 100);
     glutCreateWindow ("JNN");
-    glClearColor (0.15, 0.15, 0.15, 0.0);
+    //glClearColor (0.15, 0.15, 0.15, 0.0);
+    glClearColor (0.0, 0.0, 0.0, 0.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT);
     glutDisplayFunc(CRender);
+    glutKeyboardFunc(CKeyboard);
     glutIdleFunc(CRender);
 }
 void CJnnInit() {

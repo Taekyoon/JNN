@@ -10,13 +10,14 @@
 #include "Neuron.h"
 
 double min(double a, double b) { return a<b?a:b; }
+NeuronRenderer::NeuronRenderer() {}
 void NeuronRenderer::render(Neuron* neuron) {
     renderSynapses(neuron);
     renderNeuron(neuron);
 }
 void NeuronRenderer::renderNeuron(Neuron* neuron) {
     double radius = 1.0f;
-    glColor3f(0.0f, 0.0f, 1.0f);
+    glColor3f(0.9f, 0.9f, 0.9f);
     glEnable(GL_LINE_SMOOTH);
     glEnable(GL_POLYGON_SMOOTH);
     glHint( GL_LINE_SMOOTH_HINT, GL_NICEST );
@@ -37,10 +38,11 @@ void NeuronRenderer::renderSynapses(Neuron* neuron) {
         renderSynapse(neuron->pos, neuron->output[i]->pos, neuron->weight[i]);
 }
 void NeuronRenderer::renderSynapse(Vec2& from, Vec2& to, double weight) {
-    glColor3f(0.36f, 0.36f, 0.36f);
+    glColor4f(weight/1.0, weight/1.0, 0.36f, 0.3f);
     Vec2 vec = to - from;
     //glLineWidth(min(1.0, 1.0/(vec.size()/50.0)));
-    glLineWidth(weight);
+    //glLineWidth(weight);
+    glLineWidth(1.0);
     glBegin(GL_LINES);
     glVertex2f(from.x, from.y);
     glVertex2f(to.x, to.y);

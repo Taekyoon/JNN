@@ -1,4 +1,5 @@
 #include "Texture.h"
+Texture::Texture() {}
 // for RABG ordered 4-bit BMP file...
 GLuint LoadTextureFromBMP( const char * filename, int width, int height ) {
     GLuint texture;

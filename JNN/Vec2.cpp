@@ -1,4 +1,6 @@
 #include "Vec2.h"
+Vec2::Vec2() {}
+Vec2::Vec2(double tx, double ty):x(tx),y(ty) {}
 Vec2 Vec2::operator+(const Vec2& B) {
     return Vec2(this->x+B.x, this->y+B.y);
 }

@@ -18,13 +18,13 @@
 class JNN;
 class JNNBuilder {
 public:
-    const int MAX_NEURON_COUNT = 500;
-    void buildJNN(JNN* jnn); // Returns created neuron count
-    int createSpreadNeurons(Neuron*** neurons, Vec2 p1, Vec2 p2, double radius, double lambda); // Returns created neuron count
-    void createStraightNeurons(Neuron*** neurons, Vec2 p1, Vec2 p2, int nCount);
-    void makeRandomSynapses(Neuron** neurons, int nCount, int piv, double radius);
-    void makeSynapse(Neuron* from, Neuron* to);
-    Neuron* createNeuron(Vec2 pos);
+    const int   MAX_NEURON_COUNT = 500;
+    void        buildJNN(JNN* jnn); // Returns created neuron count
+    int         createSpreadNeurons(Neuron*** neurons, Vec2 p1, Vec2 p2, double radius, double lambda); // Returns created neuron count
+    void        createStraightNeurons(Neuron*** neurons, Vec2 p1, Vec2 p2, int nCount);
+    void        makeRandomSynapses(Neuron** neurons, int nCount, int piv, double radius);
+    void        makeSynapse(Neuron* from, Neuron* to);
+    Neuron*     createNeuron(Vec2 pos);
 };
 
 #endif /* JNNBuilder_h */

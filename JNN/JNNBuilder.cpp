@@ -12,7 +12,7 @@ int min(int a, int b) { return (a<b?a:b); }
 void JNNBuilder::buildJNN(JNN* jnn) {
     jnn->nInput = 10;
     createStraightNeurons(&(jnn->input), Vec2(20, 200), Vec2(20, 600), jnn->nInput);
-    jnn->nHidden = createSpreadNeurons(&(jnn->hidden), Vec2(150.0, 400.0), Vec2(1000.0, 400.0), 200.0, 0.1);
+    jnn->nHidden = createSpreadNeurons(&(jnn->hidden), Vec2(300.0, 400.0), Vec2(1000.0, 400.0), 300.0, 0.3);
     makeRandomSynapses(jnn->hidden, jnn->nHidden, 0, 150.0);
 }
 int JNNBuilder::createSpreadNeurons(Neuron*** neurons, Vec2 p1, Vec2 p2, double radius, double lambda) {

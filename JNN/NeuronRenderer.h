@@ -16,12 +16,12 @@
 class Neuron;
 class NeuronRenderer {
 public:
-    NeuronRenderer() {}
-    void render(Neuron* neuron);
+    NeuronRenderer();
+    void    render(Neuron* neuron);
 private:
-    void renderNeuron(Neuron* neuron);
-    void renderSynapses(Neuron* neuron);
-    void renderSynapse(Vec2& from, Vec2& to, double weight);
+    void    renderNeuron(Neuron* neuron);
+    void    renderSynapses(Neuron* neuron);
+    void    renderSynapse(Vec2& from, Vec2& to, double weight);
 };
 
 #endif /* NeuronRenderer_h */
